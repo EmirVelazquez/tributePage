@@ -1,8 +1,61 @@
+$headerFont: 'Racing Sans One', cursive;
+$textFont: 'Source Sans Pro', sans-serif;
+
 html {
-    background-color: thistle;
-    body {
-        height: 50vh;
-        margin: 100px;
-        background-color: violet;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(
+        180deg, 
+        #b31c00 0px, #b31c00 25px, 
+        #cc2000 25px, #cc2000 50px, 
+        #e62400 50px, #e62400 75px,
+        #ff2800 75px, #ff2800 100px,
+        #ff3e1a 100px, #ff3e1a 125px,
+        #ff5333 125px, #ff5333 150px,
+        #ff694d 150px, #ff694d 175px,
+        #FFFFFF 175px, #FFFFFF 100%
+        ) no-repeat top;
+}
+
+body {
+    padding: 0;
+    #main {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        #title {
+            font-family: $headerFont;
+            color: #FFFFFF;
+            font-size: 75px;
+            margin: 25px 0 0 0;
+            text-shadow:
+                3px  3px 0 #000,
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px  1px 0 #000,
+                1px  1px 0 #000;
+        }
+        #subTitle {
+            font-family: $textFont;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin: 0;
+        }
+        #img-div {
+            width: 100%;
+        }
     }
 }
+
+#img-div {
+    #image {
+        margin: 0 auto;
+        display: block;
+        max-width: 100%; 
+        max-height: 100%;
+    }
+}
+
+
+
+
