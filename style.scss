@@ -23,7 +23,7 @@ body {
         #ff3e1a 100px, #ff3e1a 125px,
         #ff5333 125px, #ff5333 150px,
         #ff694d 150px, #ff694d 175px,
-        #FFFFFF 175px, #FFFFFF 100%
+        $ferrariWhite 175px, $ferrariWhite 100%
         ) no-repeat top;
         height: 100vh;
         text-align: center;
@@ -52,7 +52,7 @@ body {
 				-1px -1px 0 #000;
         }
         #greenStripe {
-            background: linear-gradient(to right, $ferrariGreen 50%, #FFFFFF 50%);
+            background: linear-gradient(to right, $ferrariGreen 50%, $ferrariWhite 50%);
             background-size: 200% 100%;
             background-position: right bottom;
             margin-top: 25px;
@@ -60,11 +60,28 @@ body {
             transition: all 4.5s ease 1.8s;
         }
         #redStripe {
-            background: linear-gradient(to right, $ferrariRed 50%, #FFFFFF 50%);
+            background: linear-gradient(to right, $ferrariRed 50%, $ferrariWhite 50%);
             background-size: 200% 100%;
             background-position: right bottom;
             height: 30px;
             transition: all 4.5s ease 1.8s;
+        }
+        #tribute-info {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: $ferrariRed;
+            color: $ferrariWhite;
+        }
+        #tribute-info::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: $ferrariWhite;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
         }
     }
 }
@@ -103,7 +120,7 @@ body {
 }
 
 .moveCar {
-    animation: runningcar 10s infinite;
+    animation: runningcar 10s 1;
 }
 
 .colorGreen, .colorRed {

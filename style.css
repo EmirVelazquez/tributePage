@@ -9,9 +9,10 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: #fafcfb;
 }
 body #main {
-  background: linear-gradient(180deg, #b31c00 0%, #b31c00 25px, #cc2000 25px, #cc2000 50px, #e62400 50px, #e62400 75px, #ff2800 75px, #ff2800 100px, #ff3e1a 100px, #ff3e1a 125px, #ff5333 125px, #ff5333 150px, #ff694d 150px, #ff694d 175px, #FFFFFF 175px, #FFFFFF 100%) no-repeat top;
+  background: linear-gradient(180deg, #b31c00 0%, #b31c00 25px, #cc2000 25px, #cc2000 50px, #e62400 50px, #e62400 75px, #ff2800 75px, #ff2800 100px, #ff3e1a 100px, #ff3e1a 125px, #ff5333 125px, #ff5333 150px, #ff694d 150px, #ff694d 175px, #fafcfb 175px, #fafcfb 100%) no-repeat top;
   height: 100vh;
   text-align: center;
   font-family: "Source Sans Pro", sans-serif;
@@ -31,7 +32,7 @@ body #main #subTitle {
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 body #main #greenStripe {
-  background: linear-gradient(to right, #008c45 50%, #FFFFFF 50%);
+  background: linear-gradient(to right, #008c45 50%, #fafcfb 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   margin-top: 25px;
@@ -39,11 +40,28 @@ body #main #greenStripe {
   transition: all 4.5s ease 1.8s;
 }
 body #main #redStripe {
-  background: linear-gradient(to right, #CD212A 50%, #FFFFFF 50%);
+  background: linear-gradient(to right, #CD212A 50%, #fafcfb 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   height: 30px;
   transition: all 4.5s ease 1.8s;
+}
+body #main #tribute-info {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #CD212A;
+  color: #fafcfb;
+}
+body #main #tribute-info::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #fafcfb;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
 }
 
 #img-div {
@@ -80,7 +98,7 @@ body #main #redStripe {
 }
 
 .moveCar {
-  animation: runningcar 10s infinite;
+  animation: runningcar 10s 1;
 }
 
 .colorGreen, .colorRed {
