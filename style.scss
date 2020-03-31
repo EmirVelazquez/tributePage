@@ -9,10 +9,15 @@ $ferrariRed: #CD212A;
     to {left: 150%;}
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
     background-color: $ferrariWhite;
+    font-size: 18px;
     #main {
         background: linear-gradient(
         180deg, 
@@ -69,19 +74,49 @@ body {
         #tribute-info {
             position: relative;
             max-width: 100%;
-            margin: 0 auto;
+            margin: 25px auto 0 auto;
             background-color: $ferrariRed;
-            color: $ferrariWhite;
         }
         #tribute-info::after {
             content: '';
             position: absolute;
-            width: 6px;
+            width: 10px;
             background-color: $ferrariWhite;
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -3px;
+            margin-left: -5px;
+        }
+        #footerWrapper {
+          background: linear-gradient(
+              180deg, 
+              #ff694d 0%, #ff694d 25px,
+              #ff5333 25px, #ff5333 50px,
+              #ff3e1a 50px, #ff3e1a 75px,
+              #ff2800 75px, #ff2800 100px,
+              #e62400 100px, #e62400 125px,
+              #cc2000 125px, #cc2000 150px, 
+              #b31c00 150px, #b31c00 175px, 
+            ) no-repeat top;
+          color: #FFFFFF;
+          margin: 25px 0 0 0;
+          height: 175px;
+          padding: 25px 0 0 0;
+          text-shadow: 
+            -1px 1px 2px #000,
+				    1px 1px 2px #000,
+				    1px -1px 0 #000,
+            -1px -1px 0 #000;
+          #tribute-link {
+            color: #FFFFFF;
+          }
+          #tribute-link:hover {
+            color: $ferrariGreen;
+          }
+          #copyrightContainer {
+            font-size: 12px;
+            color: rgb(223, 223, 223); 
+          }
         }
     }
 }
@@ -98,6 +133,22 @@ body {
         max-height: 100%;
     }
     #img-caption {
+        margin: 0;
+    }
+}
+
+#endImgWrapper {
+    width: 100%;
+    margin-top: 75px;
+    #endImage {
+        margin: 0 auto;
+        display: block;
+        width: 70%;
+        height: auto;
+        max-width: 100%; 
+        max-height: 100%;
+    }
+    #endImgCaption {
         margin: 0;
     }
 }
@@ -127,5 +178,146 @@ body {
     background-position: left bottom !important;
 }
 
+.container {
+  padding: 20px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  color: #000000;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: -21px;
+  background-color: $ferrariRed;
+  border: 6px solid $ferrariWhite;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -21px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+#socialIcons{
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  .socialWrapper {
+    display: block;
+    margin: 0 5px 10px 5px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    .socialSvg{
+      fill: #FFFFFF !important;
+    }
+  }
+  .socialWrapper:hover{
+    border: 2px solid $ferrariGreen;
+    .socialSvg {
+      fill: $ferrariGreen !important;
+    }
+  }
+}
 
 
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px !important;
+  }
+  #title {
+    font-size: 40px !important;
+  }
+  #subTitle{
+    font-size: 16px !important;
+  }
+  #img-div{
+    margin-top: 100px;
+  }
+  #img-caption, #footerWrapper{
+    padding: 0 20px;
+    font-size: 12px !important;
+  }
+  .socialWrapper {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  /* Place the timelime to the left */
+  #tribute-info::after {
+  left: 36px !important;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}

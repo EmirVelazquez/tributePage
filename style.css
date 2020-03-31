@@ -6,10 +6,15 @@
     left: 150%;
   }
 }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
   background-color: #fafcfb;
+  font-size: 18px;
 }
 body #main {
   background: linear-gradient(180deg, #b31c00 0%, #b31c00 25px, #cc2000 25px, #cc2000 50px, #e62400 50px, #e62400 75px, #ff2800 75px, #ff2800 100px, #ff3e1a 100px, #ff3e1a 125px, #ff5333 125px, #ff5333 150px, #ff694d 150px, #ff694d 175px, #fafcfb 175px, #fafcfb 100%) no-repeat top;
@@ -49,19 +54,36 @@ body #main #redStripe {
 body #main #tribute-info {
   position: relative;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 25px auto 0 auto;
   background-color: #CD212A;
-  color: #fafcfb;
 }
 body #main #tribute-info::after {
   content: "";
   position: absolute;
-  width: 6px;
+  width: 10px;
   background-color: #fafcfb;
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -3px;
+  margin-left: -5px;
+}
+body #main #footerWrapper {
+  background: linear-gradient(180deg, #ff694d 0%, #ff694d 25px, #ff5333 25px, #ff5333 50px, #ff3e1a 50px, #ff3e1a 75px, #ff2800 75px, #ff2800 100px, #e62400 100px, #e62400 125px, #cc2000 125px, #cc2000 150px, #b31c00 150px, #b31c00 175px) no-repeat top;
+  color: #FFFFFF;
+  margin: 25px 0 0 0;
+  height: 175px;
+  padding: 25px 0 0 0;
+  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+body #main #footerWrapper #tribute-link {
+  color: #FFFFFF;
+}
+body #main #footerWrapper #tribute-link:hover {
+  color: #008c45;
+}
+body #main #footerWrapper #copyrightContainer {
+  font-size: 12px;
+  color: #dfdfdf;
 }
 
 #img-div {
@@ -77,6 +99,22 @@ body #main #tribute-info::after {
   max-height: 100%;
 }
 #img-div #img-caption {
+  margin: 0;
+}
+
+#endImgWrapper {
+  width: 100%;
+  margin-top: 75px;
+}
+#endImgWrapper #endImage {
+  margin: 0 auto;
+  display: block;
+  width: 70%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+#endImgWrapper #endImgCaption {
   margin: 0;
 }
 
@@ -103,6 +141,155 @@ body #main #tribute-info::after {
 
 .colorGreen, .colorRed {
   background-position: left bottom !important;
+}
+
+.container {
+  padding: 20px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  color: #000000;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: -21px;
+  background-color: #CD212A;
+  border: 6px solid #fafcfb;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -21px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+#socialIcons {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#socialIcons .socialWrapper {
+  display: block;
+  margin: 0 5px 10px 5px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+#socialIcons .socialWrapper .socialSvg {
+  fill: #FFFFFF !important;
+}
+#socialIcons .socialWrapper:hover {
+  border: 2px solid #008c45;
+}
+#socialIcons .socialWrapper:hover .socialSvg {
+  fill: #008c45 !important;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px !important;
+  }
+
+  #title {
+    font-size: 40px !important;
+  }
+
+  #subTitle {
+    font-size: 16px !important;
+  }
+
+  #img-div {
+    margin-top: 100px;
+  }
+
+  #img-caption, #footerWrapper {
+    padding: 0 20px;
+    font-size: 12px !important;
+  }
+
+  .socialWrapper {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* Place the timelime to the left */
+  #tribute-info::after {
+    left: 36px !important;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
