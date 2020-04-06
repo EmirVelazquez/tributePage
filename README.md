@@ -10,3 +10,6 @@ Part of freeCodeCamp.org responsive web design curriculum requirement. The point
 
 ## Link
 https://emirvelazquez.github.io/tributePage/
+
+## Preview
+![](assets/tributePreview.gif)
